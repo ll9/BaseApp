@@ -37,9 +37,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>External\ClassApp.dll</HintPath>
     </Reference>
-    <Reference Include="SecondaryApp">
-      <HintPath>External\SecondaryApp.exe</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -85,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="External\ClassApp.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Submodules\SecondaryApp\SecondaryApp.csproj">
+      <Project>{37a9ee1e-969a-4100-8a48-606d7a864bde}</Project>
+      <Name>SecondaryApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
