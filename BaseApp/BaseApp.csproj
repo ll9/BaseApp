@@ -37,6 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>External\ClassApp.dll</HintPath>
     </Reference>
+    <Reference Include="SecondaryApp">
+      <HintPath>External\SecondaryApp.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

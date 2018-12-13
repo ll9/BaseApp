@@ -1,4 +1,5 @@
 ﻿using ClassApp.Models;
+using SecondaryApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,8 @@ namespace BaseApp
             InitializeComponent();
             var lp = new Lichtpunkt();
             var mast = new Mast();
+            var s = new SecondForm();
+            s.ShowDialog();
         }
     }
 }
