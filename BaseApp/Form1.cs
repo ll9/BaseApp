@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace BaseApp
         public Form1()
         {
             InitializeComponent();
+            var lp = new Lichtpunkt();
+            var mast = new Mast();
         }
     }
 }
