@@ -1,4 +1,5 @@
 ﻿using ClassApp.Models;
+using SecondaryApp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,22 @@ namespace BaseApp
             InitializeComponent();
             var lp = new Lichtpunkt();
             var mast = new Mast();
-            var s = new SecondaryApp.SecondForm();
+            var s = new SecondForm();
             s.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog
+            {
+                Filter = "Excel-Dateien (*.xlsx) | *.xlsx"
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var table = ExcelConverter.ImportExceltoDatatable(dialog.FileName);
+                dataGridView1.DataSource = table;
+            }
         }
     }
 }
