@@ -2,6 +2,22 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <PreBuildEvent>
+
+      SET sourceDir="$(SolutionDir)packages"
+      echo "      SET sourceDir="$(SolutionDir)packages""
+      SET dstDir="$(SolutionDir)Submodules\packages"
+      echo "      SET dstDir="$(SolutionDir)Submodules\packages""
+
+      if not exist %sourceDir% mkdir %sourceDir%
+      echo "      if not exist %sourceDir% mkdir %sourceDir%"
+
+      if not exist %dstDir% mklink /j %dstDir% %sourceDir%
+      echo "      if not exist %dstDir% mklink /j %dstDir% %sourceDir%"
+
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5C1A6099-29E7-4763-8954-F3CA6E28A11A}</ProjectGuid>
